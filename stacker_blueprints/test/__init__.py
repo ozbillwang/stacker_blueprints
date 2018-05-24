@@ -28,8 +28,11 @@ class YamlDirTestGenerator():
                 self.description = "%s (%s)" % (stack.name, filepath)
 
             def __call__(self):
-                ctx = Context(config=self.config,
-                              environment={'environment': 'test'})
+                try:
+                    ctx = self.context
+                except AttributeError:
+                    ctx = Context(config=self.config,
+                                  environment={'environment': 'test'})
 
                 configvars = self.stack.variables or {}
                 variables = [Variable(k, v) for k, v in configvars.iteritems()]
