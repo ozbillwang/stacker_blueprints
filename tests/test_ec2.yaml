@@ -1,0 +1,9 @@
+---
+namespace: test
+stacks:
+  - name: ec2_instances
+    class_path: stacker_blueprints.ec2.Instances
+    variables:
+      Instances:
+        MyInstance:
+          ImageId: ami-abc12345
