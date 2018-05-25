@@ -53,6 +53,7 @@ class YamlDirTestGenerator():
                     self.stack.class_path)
                 blueprint = blueprint_class(self.stack.name, ctx)
                 blueprint.resolve_variables(variables or [])
+                blueprint.setup_parameters()
                 blueprint.create_template()
                 self.assertRenderedBlueprint(blueprint)
 
