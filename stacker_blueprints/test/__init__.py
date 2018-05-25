@@ -18,8 +18,20 @@ class YamlDirTestGenerator():
     def base_class(self):
         return BlueprintTestCase
 
+    @property
+    def yaml_dirs(self):
+        return ['.']
+
+    @property
+    def yaml_filename(self):
+        return 'test_*.yaml'
+
     def test_generator(self):
-        configs = glob('%s/test_*.yaml' % self.classdir)
+        # Search for tests in given paths
+        configs = []
+        for d in self.yaml_dirs:
+            configs.extend(
+                glob('%s/%s/%s' % (self.classdir, d, self.yaml_filename)))
 
         class ConfigTest(self.base_class):
             def __init__(self, config, stack, filepath):
