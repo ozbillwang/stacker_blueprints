@@ -7,7 +7,7 @@ from stacker.variables import Variable
 from glob import glob
 
 
-class YamlDirTestGenerator():
+class YamlDirTestGenerator(object):
     """Generate blueprint tests from yaml config files.
 
     This class creates blueprint tests from yaml files with a syntax similar to
@@ -110,10 +110,7 @@ class YamlDirTestGenerator():
 
         for f in configs:
             with open(f) as test:
-                try:
-                    config = parse_config(test.read())
-                except Exception as e:
-                    raise Exception("Error loading %s: %s" % (f, e))
+                config = parse_config(test.read())
                 config.validate()
 
                 for stack in config.stacks:
