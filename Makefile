@@ -8,7 +8,7 @@ all: lint test build
 
 # run one time only
 prerequisite:
-	sudo pip install stacker_blueprints
+	sudo python setup.py install
 
 lint:
 	flake8 stacker_blueprints
