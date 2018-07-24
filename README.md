@@ -13,13 +13,11 @@ If you're new to stacker you may use `stacker_cookiecutter <https://github.com/c
 
 >NOTES: it will create aws resources and generate cost on your aws account. `make destroy` them all if not required any more.
 
-Make sure you have permission to access aws, review below files if you need change anything.
+1) Make sure you [set up authentication credentials to access aws](http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration)
 
-1) Adjust namespace to a global unique name, the name in example will be used in s3 bucket name, and has been used. 
-2) I have issue to start with pre_build task, if you get same problem, comment that session. 
+2) Review files [conf/stage.env](conf/stage.env) and [conf/example.yaml](conf/example.yaml)
 
-    config/stage.env
-    config/example.yaml
+3) Adjust namespace in [conf/stage.env](conf/stage.env) to a global unique name
 
 ### Build the stacks
 
