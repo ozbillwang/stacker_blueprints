@@ -5,13 +5,13 @@ stacker_blueprints
 [![pypi package](https://badge.fury.io/py/stacker_blueprints.svg)](https://badge.fury.io/py/stacker_blueprints)
 [![slack](https://empire-slack.herokuapp.com/badge.svg)](https://empire-slack.herokuapp.com)
 
-An attempt at a common Blueprint library for use with `stacker <https://github.com/cloudtools/stacker>`_.
-
-If you're new to stacker you may use `stacker_cookiecutter <https://github.com/cloudtools/stacker_cookiecutter>`_ to setup your project.
+An attempt at a common Blueprint library for use with [stacker](https://github.com/cloudtools/stacker).
 
 # Quick start
 
 >NOTES: it will create aws resources and generate cost on your aws account. `make destroy` them all if not required any more.
+
+If you're new to stacker you may use [stacker_cookiecutter](https://github.com/cloudtools/stacker_cookiecutter) to setup your project.
 
 1) Make sure you [set up authentication credentials to access aws](http://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration)
 
